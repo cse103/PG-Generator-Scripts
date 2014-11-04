@@ -1,0 +1,541 @@
+
+DOCUMENT();        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+  "PGML.pl",
+  "MathObjects.pl",
+  "PGcourse.pl",
+);
+
+Context("Numeric");
+
+Context()->flags->set(tolerance=>0.01);
+
+TEXT(beginproblem);
+$showPartialCorrectAnswers = 1;
+
+$rand_question = random(0,19,1);
+######################################################################
+
+if ($rand_question == 0) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_0.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The exponential component has [`\lambda`] of 1.0. Its component weight is [_____]{0.7}
+- Uniform component on the interval ([_______]{1.0},[_____]{3.5}). Its component weight is [_____]{0.3}
+END_PGML
+}
+
+if ($rand_question == 1) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_1.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The normal component has mean of -2.0, and std of [______]{0.5}. Its component weight is [_____]{0.5}
+- Point mass on [_______]{-0.5}. Its component weight is [_____]{0.5}
+END_PGML
+}
+
+if ($rand_question == 2) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_2.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The exponential component has [`\lambda`] of 0.5. Its component weight is [_____]{0.4}
+- Uniform component on the interval ([_______]{2.0},[_____]{3.5}). Its component weight is [_____]{0.6}
+END_PGML
+}
+
+if ($rand_question == 3) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_3.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The exponential component has [`\lambda`] of 0.5. Its component weight is [_____]{0.25}
+- Point mass on [_______]{-2.5}. Its component weight is [_____]{0.75}
+END_PGML
+}
+
+if ($rand_question == 4) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_4.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The normal component has mean of 1.0, and std of [______]{1}. Its component weight is [_____]{0.4}
+- Point mass on [_______]{2.5}. Its component weight is [_____]{0.6}
+END_PGML
+}
+
+if ($rand_question == 5) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_5.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The exponential component has [`\lambda`] of 0.5. Its component weight is [_____]{0.45}
+- Point mass on [_______]{2.5}. Its component weight is [_____]{0.55}
+END_PGML
+}
+
+if ($rand_question == 6) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_6.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The exponential component has [`\lambda`] of 1.0. Its component weight is [_____]{0.55}
+- Uniform component on the interval ([_______]{-0.5},[_____]{2.5}). Its component weight is [_____]{0.45}
+END_PGML
+}
+
+if ($rand_question == 7) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_7.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The normal component has mean of 1.0, and std of [______]{0.5}. Its component weight is [_____]{0.65}
+- Uniform component on the interval ([_______]{-4.5},[_____]{-2.5}). Its component weight is [_____]{0.35}
+END_PGML
+}
+
+if ($rand_question == 8) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_8.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The exponential component has [`\lambda`] of 1.5. Its component weight is [_____]{0.3}
+- Uniform component on the interval ([_______]{4.0},[_____]{4.5}). Its component weight is [_____]{0.7}
+END_PGML
+}
+
+if ($rand_question == 9) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_9.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The exponential component has [`\lambda`] of 1.5. Its component weight is [_____]{0.6}
+- Uniform component on the interval ([_______]{-2.5},[_____]{4.5}). Its component weight is [_____]{0.4}
+END_PGML
+}
+
+if ($rand_question == 10) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_10.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The exponential component has [`\lambda`] of 1.0. Its component weight is [_____]{0.3}
+- Point mass on [_______]{2.0}. Its component weight is [_____]{0.7}
+END_PGML
+}
+
+if ($rand_question == 11) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_11.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The normal component has mean of -1.0, and std of [______]{1}. Its component weight is [_____]{0.25}
+- Uniform component on the interval ([_______]{-1.0},[_____]{2.0}). Its component weight is [_____]{0.75}
+END_PGML
+}
+
+if ($rand_question == 12) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_12.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The normal component has mean of 1.0, and std of [______]{1}. Its component weight is [_____]{0.3}
+- Uniform component on the interval ([_______]{-3.0},[_____]{-1.0}). Its component weight is [_____]{0.7}
+END_PGML
+}
+
+if ($rand_question == 13) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_13.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The normal component has mean of 0.5, and std of [______]{1.5}. Its component weight is [_____]{0.25}
+- Point mass on [_______]{1.0}. Its component weight is [_____]{0.75}
+END_PGML
+}
+
+if ($rand_question == 14) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_14.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The normal component has mean of -2.0, and std of [______]{1}. Its component weight is [_____]{0.35}
+- Point mass on [_______]{3.0}. Its component weight is [_____]{0.65}
+END_PGML
+}
+
+if ($rand_question == 15) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_15.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The exponential component has [`\lambda`] of 0.5. Its component weight is [_____]{0.3}
+- Point mass on [_______]{-0.5}. Its component weight is [_____]{0.7}
+END_PGML
+}
+
+if ($rand_question == 16) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_16.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The exponential component has [`\lambda`] of 0.5. Its component weight is [_____]{0.65}
+- Uniform component on the interval ([_______]{-1.5},[_____]{4.5}). Its component weight is [_____]{0.35}
+END_PGML
+}
+
+if ($rand_question == 17) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_17.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The normal component has mean of 1.5, and std of [______]{1.5}. Its component weight is [_____]{0.5}
+- Point mass on [_______]{0.0}. Its component weight is [_____]{0.5}
+END_PGML
+}
+
+if ($rand_question == 18) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_18.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The exponential component has [`\lambda`] of 1.5. Its component weight is [_____]{0.55}
+- Uniform component on the interval ([_______]{-4.5},[_____]{-2.0}). Its component weight is [_____]{0.45}
+END_PGML
+}
+
+if ($rand_question == 19) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with *two* components.
+
+One of the components is either a normal or an exponential distribution; the other is either a point mass or a uniform distribution.
+
+All parameters of component distributions are small multiples of 0.5.
+
+[`\lambda`] of exponential components and std of normal components take on value 0.5, 1 or 1.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_19.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- The exponential component has [`\lambda`] of 0.5. Its component weight is [_____]{0.6}
+- Uniform component on the interval ([_______]{1.5},[_____]{3.5}). Its component weight is [_____]{0.4}
+END_PGML
+}
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

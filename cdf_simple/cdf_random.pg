@@ -1,0 +1,141 @@
+
+DOCUMENT();        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+  "PGML.pl",
+  "MathObjects.pl",
+  "PGcourse.pl",
+);
+
+Context("Numeric");
+
+Context()->flags->set(tolerance=>0.01);
+
+TEXT(beginproblem);
+$showPartialCorrectAnswers = 1;
+
+$rand_question = random(0,4,1);
+######################################################################
+
+if ($rand_question == 0) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with point mass and uniform components.
+
+All parameters of component distributions are small multiples of 0.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_0.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- Uniform component on the interval ([_______]{-1.5},[_____]{-1.0}). Its component weight is [_____]{0.3}
+- Uniform component on the interval ([_______]{0.5},[_____]{4.0}). Its component weight is [_____]{0.2}
+- Point mass on [_______]{3.0}. Its component weight is [_____]{0.2}
+- Point mass on [_______]{0.0}. Its component weight is [_____]{0.3}
+END_PGML
+}
+
+if ($rand_question == 1) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with point mass and uniform components.
+
+All parameters of component distributions are small multiples of 0.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_1.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- Uniform component on the interval ([_______]{-3.0},[_____]{-0.5}). Its component weight is [_____]{0.25}
+- Uniform component on the interval ([_______]{2.0},[_____]{3.0}). Its component weight is [_____]{0.2}
+- Point mass on [_______]{1.5}. Its component weight is [_____]{0.2}
+- Point mass on [_______]{2.0}. Its component weight is [_____]{0.35}
+END_PGML
+}
+
+if ($rand_question == 2) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with point mass and uniform components.
+
+All parameters of component distributions are small multiples of 0.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_2.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- Uniform component on the interval ([_______]{-4.5},[_____]{-1.5}). Its component weight is [_____]{0.25}
+- Uniform component on the interval ([_______]{1.0},[_____]{1.5}). Its component weight is [_____]{0.25}
+- Point mass on [_______]{-3.5}. Its component weight is [_____]{0.3}
+- Point mass on [_______]{2.5}. Its component weight is [_____]{0.2}
+END_PGML
+}
+
+if ($rand_question == 3) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with point mass and uniform components.
+
+All parameters of component distributions are small multiples of 0.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_3.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- Uniform component on the interval ([_______]{-2.5},[_____]{-1.5}). Its component weight is [_____]{0.25}
+- Uniform component on the interval ([_______]{1.5},[_____]{3.5}). Its component weight is [_____]{0.2}
+- Point mass on [_______]{2.0}. Its component weight is [_____]{0.25}
+- Point mass on [_______]{1.0}. Its component weight is [_____]{0.3}
+END_PGML
+}
+
+if ($rand_question == 4) {
+BEGIN_PGML
+Below is the CDF of a mixture distribution with point mass and uniform components.
+
+All parameters of component distributions are small multiples of 0.5.
+
+Component weights take on multiples of 0.05 and they need to sum to one.
+
+END_PGML
+BEGIN_TEXT
+$BR
+\{ image("mixture_cdf_4.png", width=>400, height=>320) \}
+END_TEXT
+BEGIN_PGML
+
+Identify the component distributions:
+
+- Uniform component on the interval ([_______]{-4.5},[_____]{-4.0}). Its component weight is [_____]{0.2}
+- Uniform component on the interval ([_______]{1.5},[_____]{2.0}). Its component weight is [_____]{0.4}
+- Point mass on [_______]{-4.0}. Its component weight is [_____]{0.2}
+- Point mass on [_______]{2.5}. Its component weight is [_____]{0.2}
+END_PGML
+}
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.
