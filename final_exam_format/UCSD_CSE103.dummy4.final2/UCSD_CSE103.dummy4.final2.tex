@@ -1,0 +1,1636 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WeBWorK Online Homework Delivery System
+% Copyright © 2000-2007 The WeBWorK Project, http://openwebwork.sf.net/
+% $CVSHeader: webwork2/conf/snippets/hardcopyPreamble.tex,v 1.3 2005/09/17 20:12:01 gage Exp $
+% 
+% This program is free software; you can redistribute it and/or modify it under
+% the terms of either: (a) the GNU General Public License as published by the
+% Free Software Foundation; either version 2, or (at your option) any later
+% version, or (b) the "Artistic License" which comes with this package.
+% 
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See either the GNU General Public License or the
+% Artistic License for more details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\batchmode
+\documentclass[10pt,dvips]{amsart}
+\usepackage{amsmath,amsfonts,amssymb,multicol,setspace}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}  % allows use of eps files with pdftex
+\usepackage{epsf}
+\usepackage{epsfig}
+\usepackage{pslatex}
+\usepackage[utf8]{inputenc}
+\pagestyle{plain}
+\textheight 9in
+\oddsidemargin = -0.42in
+\evensidemargin = -0.42in
+\textwidth= 7.28in
+\columnsep = .25in
+\columnseprule = .4pt
+\def\endline{\bigskip\hrule width \hsize height 0.8pt }
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\less}{<}
+\newcommand{\grt}{>}
+
+% BEGIN capa tex macros
+
+\newcommand{\capa}{{\sl C\kern-.10em\raise-.00ex\hbox{\rm A}\kern-.22em%
+{\sl P}\kern-.14em\kern-.01em{\rm A}}}
+  
+\newenvironment{choicelist}
+{\begin{list}{}
+	{\setlength{\rightmargin}{0in}\setlength{\leftmargin}{0.13in}
+	\setlength{\topsep}{0.05in}\setlength{\itemsep}{0.022in}
+	\setlength{\parsep}{0in}\setlength{\belowdisplayskip}{0.04in}
+	\setlength{\abovedisplayskip}{0.05in}
+	\setlength{\abovedisplayshortskip}{-0.04in}
+	\setlength{\belowdisplayshortskip}{0.04in}}
+	}
+{\end{list}}
+
+% END capa tex macros 
+
+\begin{document}
+\voffset=-0.8in
+\newpage
+{\textbf \Large Final Exam, version 2} \hfill CSE 103, Fall 2013
+\\
+
+\vspace{.25in}
+
+Name: \underline{\hspace{3in}}
+\\
+
+ID: \underline{\hspace{3.2in}}
+\\
+
+\vspace{1in}
+
+On your desk you should have only the exam paper, writing tools, and
+the cheat-sheet. The cheat-sheet is one page handwritten on both sides.
+
+The exams are color coded. Your exam should have different color than that of your neighbours to the left, right and in front.
+
+There are 10 questions in this exam, totalling 100 points and an
+extra-credit question, worth 10 points. The final score is determined
+by summing all the points and taking the min of the sum and 100.
+
+Be clear and concise. Write your answers {\bf in the space provided}
+after each question. To the degree possible, write your answers as
+expressions. If you provide only the final numerical answer it would
+be hard for us to assign you partial credit. Similarly, clearly
+written explanations written after the final answer will make it
+possible for us to give you partial credit if your final answer is
+incorrect.
+
+Do your work on the back side of the pages and then, when you are
+confident of the answer, copy it, including explanations, 
+neatly into the space below the question.
+\vspace{0.4in}
+
+\begin{center}
+\begin{tabular}{|c|l|} \hline
+\hspace{1in} & \hspace{1in} \\
+1 & 10pt. \\ 
+&  \\ \hline
+2 & 8pt. \\
+&  \\ \hline
+3 & 7pt. \\
+&  \\ \hline
+4 & 15pt.\\
+&  \\ \hline
+5 & 10pt.\\
+&  \\ \hline
+6 & 10pt.\\
+&  \\ \hline
+7 & 10pt.\\
+&  \\ \hline
+8 & 10pt.\\
+&  \\ \hline
+9 & 10pt. \\
+& \\ \hline
+10 & 10pt. \\
+& \\ \hline
+EC & 10pt. \\
+& \\ \hline
+total & \\
+& \\ \hline
+\end{tabular}
+\end{center}
+
+\pagebreak
+
+\columnwidth=\linewidth
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WeBWorK Online Homework Delivery System
+% Copyright © 2000-2007 The WeBWorK Project, http://openwebwork.sf.net/
+% $CVSHeader: webwork2/conf/snippets/hardcopyProblemDivider.tex,v 1.3 2004/06/24 21:10:50 dpvc Exp $
+% 
+% This program is free software; you can redistribute it and/or modify it under
+% the terms of either: (a) the GNU General Public License as published by the
+% Free Software Foundation; either version 2, or (at your option) any later
+% version, or (b) the "Artistic License" which comes with this package.
+% 
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See either the GNU General Public License or the
+% Artistic License for more details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+      \ifx\pgmlMarker\undefined
+        \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to lett if \newline was used
+      \fi
+      \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+      \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+      \parindent=0pt
+      \catcode`\^^M=\active
+      \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+      \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+    {\bf 1.} (10 pts) \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % don not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=10pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def\pgmlIndent{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\pgmlSetup
+How many strings of 5 lower case letters are there that contain at least 2 of the letters in the range a-e inclusive?
+\vskip\baselineskip
+Hint: look at the complement: how many strings contain no letters in a-e, and how many strings contain exactly one letter in a-e?
+\vskip\baselineskip
+\mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\par}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WeBWorK Online Homework Delivery System
+% Copyright © 2000-2007 The WeBWorK Project, http://openwebwork.sf.net/
+% $CVSHeader: webwork2/conf/snippets/hardcopyProblemDivider.tex,v 1.3 2004/06/24 21:10:50 dpvc Exp $
+% 
+% This program is free software; you can redistribute it and/or modify it under
+% the terms of either: (a) the GNU General Public License as published by the
+% Free Software Foundation; either version 2, or (at your option) any later
+% version, or (b) the "Artistic License" which comes with this package.
+% 
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See either the GNU General Public License or the
+% Artistic License for more details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+      \ifx\pgmlMarker\undefined
+        \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to lett if \newline was used
+      \fi
+      \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+      \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+      \parindent=0pt
+      \catcode`\^^M=\active
+      \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+      \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+    \vspace{1.5in}{\bf 2.} (8 pts) \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % don not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=10pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def\pgmlIndent{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\pgmlSetup
+Suppose a pedestrian crosses a busy street either on or off the crosswalk.
+Suppose that the probability she uses the cross-walk is 90\%. Furthermore, suppose that the probability of getting hit by a car is $10^{-5}$ when using the cross-walk and $10^{-4}$ when not using the cross-walk. 
+\vskip\baselineskip
+Suppose the pedestrian crossed the street and was hit by a car, what is the
+probability that she was using the cross-walk?\mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\vskip\baselineskip
+Suppose the pedestrian crossed the street and was not hit by a car, what is the
+probability that she was using the cross-walk?\mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\par}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WeBWorK Online Homework Delivery System
+% Copyright © 2000-2007 The WeBWorK Project, http://openwebwork.sf.net/
+% $CVSHeader: webwork2/conf/snippets/hardcopyProblemDivider.tex,v 1.3 2004/06/24 21:10:50 dpvc Exp $
+% 
+% This program is free software; you can redistribute it and/or modify it under
+% the terms of either: (a) the GNU General Public License as published by the
+% Free Software Foundation; either version 2, or (at your option) any later
+% version, or (b) the "Artistic License" which comes with this package.
+% 
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See either the GNU General Public License or the
+% Artistic License for more details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+      \ifx\pgmlMarker\undefined
+        \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to lett if \newline was used
+      \fi
+      \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+      \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+      \parindent=0pt
+      \catcode`\^^M=\active
+      \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+      \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+    \vspace{1.5in}{\bf 3.} (7 pts) \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % don not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=10pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def\pgmlIndent{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\pgmlSetup
+You are giving candy to 6 kids. The candy consists of 10 Twix and 9 Milky-ways. Each kids gets at least one Twix. How many ways are there to distribute the candy among the kids?
+\vskip\baselineskip
+\mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\par}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WeBWorK Online Homework Delivery System
+% Copyright © 2000-2007 The WeBWorK Project, http://openwebwork.sf.net/
+% $CVSHeader: webwork2/conf/snippets/hardcopyProblemDivider.tex,v 1.3 2004/06/24 21:10:50 dpvc Exp $
+% 
+% This program is free software; you can redistribute it and/or modify it under
+% the terms of either: (a) the GNU General Public License as published by the
+% Free Software Foundation; either version 2, or (at your option) any later
+% version, or (b) the "Artistic License" which comes with this package.
+% 
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See either the GNU General Public License or the
+% Artistic License for more details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\pagebreak{\bf 4.} (15 pts) \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % don not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=10pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def\pgmlIndent{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\pgmlSetup
+For the following joint probability matrices, fill in the missing values and answer the questions. 
+\par}%
+
+\par\smallskip\begin{center}\begin{tabular}{|c|c|c|c|c|} \hline
+
+ & X=1   &  X=2   & X=3  &Marginal over Y \\ \hline 
+
+Y=1 & 1/8 &0 &1/8 & \\ \hline 
+
+Y=2 &   &1/2 &0 &1/2 \\ \hline 
+
+Y=3 &1/8 & 0 & 1/8  & 1/4  \\ \hline 
+
+Marginal over X & 1/4  & 1/2  &   &* \\ \hline 
+
+
+\end {tabular}\end{center}\par\smallskip
+
+
+{\pgmlSetup
+{\pgmlIndent\let\pgmlItem=\pgmlbulletItem
+
+
+\pgmlItem{}Are $X$ and $Y$ dependent? \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+
+
+\pgmlItem{}Are $X$ and $Y$ correlated? \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+\par}%
+\par}%
+{\pgmlSetup
+{\pgmlIndent\let\pgmlItem=\pgmlbulletItem
+
+
+\pgmlItem{}$P(X=2|Y=2) = $ \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+
+\par}%
+\par}%
+
+\par\smallskip\begin{center}\begin{tabular}{|c|c|c|c|c|} \hline
+
+ & X=1   &  X=2   & X=3  &Marginal over Y \\ \hline 
+
+Y=1 & 1/10 & & &1/5 \\ \hline 
+
+Y=2 & 1/5  &1/10 &1/10 &2/5 \\ \hline 
+
+Y=3 &1/5 & 1/10 & 1/10  &   \\ \hline 
+
+Marginal over X & 1/2  & 1/4  & 1/4  &* \\ \hline 
+
+
+\end {tabular}\end{center}\par\smallskip
+
+
+{\pgmlSetup
+{\pgmlIndent\let\pgmlItem=\pgmlbulletItem
+
+
+\pgmlItem{}Are $X$ and $Y$ dependent? \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+
+
+\pgmlItem{}Are $X$ and $Y$ correlated? \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+\par}%
+\par}%
+{\pgmlSetup
+{\pgmlIndent\let\pgmlItem=\pgmlbulletItem
+
+
+\pgmlItem{}$P(Y=2|X=3) = $ \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+
+\par}%
+\par}%
+
+\par\smallskip\begin{center}\begin{tabular}{|c|c|c|c|c|} \hline
+
+ & X=1   &  X=2   & X=3  &Marginal over Y \\ \hline 
+
+Y=1 & 1/3 &0 &0 &1/3 \\ \hline 
+
+Y=2 & 0  &1/6 &0 &1/6 \\ \hline 
+
+Y=3 & & 1/6 & 1/6  &   \\ \hline 
+
+Marginal over X & 1/2  &   & 1/6  &* \\ \hline 
+
+
+\end {tabular}\end{center}\par\smallskip
+
+
+{\pgmlSetup
+{\pgmlIndent\let\pgmlItem=\pgmlbulletItem
+
+
+\pgmlItem{}Are $X$ and $Y$ dependent? \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+
+
+\pgmlItem{}Are $X$ and $Y$ correlated? \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+\par}%
+\par}%
+{\pgmlSetup
+{\pgmlIndent\let\pgmlItem=\pgmlbulletItem
+
+
+\pgmlItem{}$P(X=3|Y=3) = $ \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+
+\par}%
+\par}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WeBWorK Online Homework Delivery System
+% Copyright © 2000-2007 The WeBWorK Project, http://openwebwork.sf.net/
+% $CVSHeader: webwork2/conf/snippets/hardcopyProblemDivider.tex,v 1.3 2004/06/24 21:10:50 dpvc Exp $
+% 
+% This program is free software; you can redistribute it and/or modify it under
+% the terms of either: (a) the GNU General Public License as published by the
+% Free Software Foundation; either version 2, or (at your option) any later
+% version, or (b) the "Artistic License" which comes with this package.
+% 
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See either the GNU General Public License or the
+% Artistic License for more details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+      \ifx\pgmlMarker\undefined
+        \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to lett if \newline was used
+      \fi
+      \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+      \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+      \parindent=0pt
+      \catcode`\^^M=\active
+      \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+      \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+    \pagebreak{\bf 5.} (10 pts) \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % don not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=10pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def\pgmlIndent{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\pgmlSetup
+You are given a card deck of 55 cards, consisting all combinations of 11 ranks and 5 suits. Suppose you draw a hand of 5 cards out of this deck, what is the probability that it will be a {\itshape{}straight} ?
+\vskip\baselineskip
+Recall that a {\itshape{}straight} refers to five cards whose ranks are in sequence, but whose suits are {\bfseries{}not all the same} (otherwise it is called a straight flush). The 1 can be used either as a low card or a high card when forming a straight. For example, both (1,2,3,4,5) and (8,9,10,11,1) are valid straight ranks, but not (9,10,11,1,2).
+\vskip\baselineskip
+{\pgmlIndent\let\pgmlItem=\pgmlnumericItem
+
+
+\pgmlItem{}The number of possibilities for the ranks of a straight is \mbox{  \parbox[t]{20ex}{\hrulefill}  }.
+\vskip\baselineskip
+
+
+\pgmlItem{}The suits can be anything other than all equal, so the number of possibilities for the suits of a straight is \mbox{  \parbox[t]{20ex}{\hrulefill}  }.
+\vskip\baselineskip
+
+
+\pgmlItem{}Thus the number of straight hands is \mbox{  \parbox[t]{20ex}{\hrulefill}  }.
+\vskip\baselineskip
+
+
+\pgmlItem{}Finally, the probability that a randomly chosen hand is a straight is \mbox{  \parbox[t]{20ex}{\hrulefill}  }.
+
+\par}%
+\par}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WeBWorK Online Homework Delivery System
+% Copyright © 2000-2007 The WeBWorK Project, http://openwebwork.sf.net/
+% $CVSHeader: webwork2/conf/snippets/hardcopyProblemDivider.tex,v 1.3 2004/06/24 21:10:50 dpvc Exp $
+% 
+% This program is free software; you can redistribute it and/or modify it under
+% the terms of either: (a) the GNU General Public License as published by the
+% Free Software Foundation; either version 2, or (at your option) any later
+% version, or (b) the "Artistic License" which comes with this package.
+% 
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See either the GNU General Public License or the
+% Artistic License for more details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\pagebreak{\bf 6.} (10 pts) \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % don not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=10pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def\pgmlIndent{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\pgmlSetup
+You are given a coin that you assume is a fair coin, and you are interested in the probability that the fraction of ``heads'' in the sequence is at least 0.4
+\vskip\baselineskip
+{\pgmlIndent\let\pgmlItem=\pgmlalphaItem
+
+
+\pgmlItem{}Suppose the coin is flipped n=100 times 
+{\pgmlIndent\let\pgmlItem=\pgmlcircleItem
+
+
+\pgmlItem{}Write an exact expression for the probability that the number of heads is equal to 0.4$\times$100=40.  \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+
+\pgmlItem{}What Z-score corresponds to getting 40 heads? \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+
+\pgmlItem{}What is the central limit theorem approximation for the probability that the number of heads is 40 or higher assuming that the coin is fair? \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+\par}%
+
+
+
+\pgmlItem{}Suppose that instead of n=100 times we flip the coin n=10000 times.
+{\pgmlIndent\let\pgmlItem=\pgmlcircleItem
+
+
+\pgmlItem{}What Z-score corresponds to getting 0.4$\times$10000=4000 heads? \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+
+\pgmlItem{}What is the central limit theorem approximation for the probability that the number of heads is 4000 or higher assuming that the coin is fair?\mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\par}%
+
+\par}%
+\par}%
+{\pgmlSetup
+{\pgmlIndent\let\pgmlItem=\pgmlalphaItem
+
+
+\pgmlItem{}As we increase the number of coin flips $n$, does the probability of the event {\bfseries{}``the number of heads is larger than 0.4$\times n$''} increase,decrease or stay the same? \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\par}%
+\par}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WeBWorK Online Homework Delivery System
+% Copyright © 2000-2007 The WeBWorK Project, http://openwebwork.sf.net/
+% $CVSHeader: webwork2/conf/snippets/hardcopyProblemDivider.tex,v 1.3 2004/06/24 21:10:50 dpvc Exp $
+% 
+% This program is free software; you can redistribute it and/or modify it under
+% the terms of either: (a) the GNU General Public License as published by the
+% Free Software Foundation; either version 2, or (at your option) any later
+% version, or (b) the "Artistic License" which comes with this package.
+% 
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See either the GNU General Public License or the
+% Artistic License for more details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\pagebreak{\bf 7.} (10 pts) \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % don not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=10pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def\pgmlIndent{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\pgmlSetup
+Suppose a web-server receives, on average, 60 requests per minute.  Assume that the requests are independent and therefore:
+\vskip\baselineskip
+{\pgmlIndent\let\pgmlItem=\pgmlnumericItem
+
+
+\pgmlItem{}The number of requests in any given minute is distributed according to a Poisson distribution and
+
+
+
+\pgmlItem{}The time between two consecutive requests is distributed according to an Exponential distribution. 
+\par}%
+\vskip\baselineskip
+{\pgmlIndent\let\pgmlItem=\pgmlcircleItem
+
+
+\pgmlItem{}What is the probability that it will not receive any request within the first 9 seconds of some particular minute? \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\vskip\baselineskip
+
+
+\pgmlItem{}What is the probability that it will receive exactly 1 requests during the same period of time? \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\vskip\baselineskip
+
+
+\pgmlItem{}What is the probability that the time between the first and the second requests received in a minute would be smaller than 1 seconds?  \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+\par}%
+\par}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WeBWorK Online Homework Delivery System
+% Copyright © 2000-2007 The WeBWorK Project, http://openwebwork.sf.net/
+% $CVSHeader: webwork2/conf/snippets/hardcopyProblemDivider.tex,v 1.3 2004/06/24 21:10:50 dpvc Exp $
+% 
+% This program is free software; you can redistribute it and/or modify it under
+% the terms of either: (a) the GNU General Public License as published by the
+% Free Software Foundation; either version 2, or (at your option) any later
+% version, or (b) the "Artistic License" which comes with this package.
+% 
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See either the GNU General Public License or the
+% Artistic License for more details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+      \ifx\pgmlMarker\undefined
+        \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to lett if \newline was used
+      \fi
+      \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+      \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+      \parindent=0pt
+      \catcode`\^^M=\active
+      \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+      \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+    \pagebreak{\bf 8.} (10 pts) \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % don not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=10pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def\pgmlIndent{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\pgmlSetup
+Suppose $X_1, ... , X_{58}$ are independent random variables where $X_i \in \{0,1\}$ and $P(X_i = 1) = 0.4$ for $i = 1, ..., n$.
+\vskip\baselineskip
+Define a random variable $Y = \sum_{i=1}^{58}{(-1)^{i+1} X_i} = X_1 - X_2 + X_3 - X_4 + ... - X_{58}$
+\vskip\baselineskip
+What is $E[Y]$?  \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\vskip\baselineskip
+What is $Var[Y]$?  \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\vskip\baselineskip
+Using Chebyshev's inequality, give an upper bound on $P(|Y| > 30)$?  \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\par}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WeBWorK Online Homework Delivery System
+% Copyright © 2000-2007 The WeBWorK Project, http://openwebwork.sf.net/
+% $CVSHeader: webwork2/conf/snippets/hardcopyProblemDivider.tex,v 1.3 2004/06/24 21:10:50 dpvc Exp $
+% 
+% This program is free software; you can redistribute it and/or modify it under
+% the terms of either: (a) the GNU General Public License as published by the
+% Free Software Foundation; either version 2, or (at your option) any later
+% version, or (b) the "Artistic License" which comes with this package.
+% 
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See either the GNU General Public License or the
+% Artistic License for more details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+      \ifx\pgmlMarker\undefined
+        \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to lett if \newline was used
+      \fi
+      \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+      \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+      \parindent=0pt
+      \catcode`\^^M=\active
+      \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+      \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+    \pagebreak{\bf 9.} (10 pts) \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % don not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=10pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def\pgmlIndent{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\pgmlSetup
+We want to prove that seat-belts save lives. In other words, our goal is to reject the null hypothesis stating that seat-belts do not help.
+\vskip\baselineskip
+Suppose first that we know that, in general, the probability of a fatality
+in a car accident is $q=1\%$.
+\vskip\baselineskip
+We examine $n=1000$ randomly selected records of accidents where the driver
+wore a seat belt. We find that $k=7$ of these accidents were fatal.
+\vskip\baselineskip
+With what confidence can we conclude that claim is
+correct?
+
+$X_i$ = $i^{th}$ accident was fatal.
+\vskip\baselineskip
+The null hypothesis is that seat belts make no difference. 
+$Pr(X_i=1)=q=0.01$. Alternative hypothesis, $Pr(X_i=1)<q$.
+\vskip\baselineskip
+The total number of fatal accident under the null hypothesis $S=\sum_i X_i$.
+\vskip\baselineskip
+$E(S)=$\mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\vskip\baselineskip
+$var(S)=$\mbox{  \parbox[t]{20ex}{\hrulefill}  }
+$std(S) = $\mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\vskip\baselineskip
+$k=7$ is approximately one standard deviation smaller than the mean, in other words, the $z$-score is roughly (write an integer number)\mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\vskip\baselineskip
+Using this approximation, the {\bfseries{}$p$-value} associated with $k=7$ is \mbox{  \parbox[t]{20ex}{\hrulefill}  }. 
+\par}%
+{\pgmlSetup
+{\bfseries{}Complete the sentence:} the $p$-value (``is''/''is not'') \mbox{  \parbox[t]{20ex}{\hrulefill}  } a {\bfseries{}random variable}.
+\par}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WeBWorK Online Homework Delivery System
+% Copyright © 2000-2007 The WeBWorK Project, http://openwebwork.sf.net/
+% $CVSHeader: webwork2/conf/snippets/hardcopyProblemDivider.tex,v 1.3 2004/06/24 21:10:50 dpvc Exp $
+% 
+% This program is free software; you can redistribute it and/or modify it under
+% the terms of either: (a) the GNU General Public License as published by the
+% Free Software Foundation; either version 2, or (at your option) any later
+% version, or (b) the "Artistic License" which comes with this package.
+% 
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See either the GNU General Public License or the
+% Artistic License for more details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+      \ifx\pgmlMarker\undefined
+        \newdimen\pgmlMarker \pgmlMarker=0.00314159pt  % hack to lett if \newline was used
+      \fi
+      \ifx\oldnewline\undefined \let\oldnewline=\newline \fi
+      \def\newline{\oldnewline\hskip-\pgmlMarker\hskip\pgmlMarker\relax}%
+      \parindent=0pt
+      \catcode`\^^M=\active
+      \def^^M{\ifmmode\else\fi\ignorespaces}%  skip paragraph breaks in the preamble
+      \def\par{\ifmmode\else\endgraf\fi\ignorespaces}%
+    \pagebreak{\bf 10.} (10 pts) \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % don not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=10pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def\pgmlIndent{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\pgmlSetup
+Below is the CDF of a mixture distribution with point mass and uniform components.
+\vskip\baselineskip
+Component weights take on multiples of 0.05 and they need to sum to one.
+\par}%
+\leavevmode\\\relax 
+\includegraphics[width=0.8\linewidth]{imgs/mixture_cdf_3.png}
+
+
+{\pgmlSetup
+Identify the component distributions:
+\vskip\baselineskip
+{\pgmlIndent\let\pgmlItem=\pgmlbulletItem
+
+
+\pgmlItem{}Uniform component on the interval (\mbox{  \parbox[t]{20ex}{\hrulefill}  },\mbox{  \parbox[t]{20ex}{\hrulefill}  }). Its component weight is \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+
+
+\pgmlItem{}Uniform component on the interval (\mbox{  \parbox[t]{20ex}{\hrulefill}  },\mbox{  \parbox[t]{20ex}{\hrulefill}  }). Its component weight is \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+
+
+\pgmlItem{}Point mass on \mbox{  \parbox[t]{20ex}{\hrulefill}  }. Its component weight is \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+
+
+\pgmlItem{}Point mass on \mbox{  \parbox[t]{20ex}{\hrulefill}  }. Its component weight is \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+
+\par}%
+\par}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WeBWorK Online Homework Delivery System
+% Copyright © 2000-2007 The WeBWorK Project, http://openwebwork.sf.net/
+% $CVSHeader: webwork2/conf/snippets/hardcopyProblemDivider.tex,v 1.3 2004/06/24 21:10:50 dpvc Exp $
+% 
+% This program is free software; you can redistribute it and/or modify it under
+% the terms of either: (a) the GNU General Public License as published by the
+% Free Software Foundation; either version 2, or (at your option) any later
+% version, or (b) the "Artistic License" which comes with this package.
+% 
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See either the GNU General Public License or the
+% Artistic License for more details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\pagebreak{\bf 11.} (10 pts) \ifdim\lastskip=\pgmlMarker
+  \let\pgmlPar=\relax
+ \else
+  \let\pgmlPar=\par
+  \vadjust{\kern3pt}%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    definitions for PGML
+%
+
+\ifx\pgmlCount\undefined  % don not redefine if multiple files load PGML.pl
+  \newcount\pgmlCount
+  \newdimen\pgmlPercent
+  \newdimen\pgmlPixels  \pgmlPixels=.5pt
+\fi
+\pgmlPercent=.01\hsize
+
+\def\pgmlSetup{%
+  \parskip=10pt \parindent=0pt
+%  \ifdim\lastskip=\pgmlMarker\else\par\fi
+  \pgmlPar
+}%
+
+\def\pgmlIndent{\par\advance\leftskip by 2em \advance\pgmlPercent by .02em \pgmlCount=0}%
+\def\pgmlbulletItem{\par\indent\llap{$\bullet$ }\ignorespaces}%
+\def\pgmlcircleItem{\par\indent\llap{$\circ$ }\ignorespaces}%
+\def\pgmlsquareItem{\par\indent\llap{\vrule height 1ex width .75ex depth -.25ex\ }\ignorespaces}%
+\def\pgmlnumericItem{\par\indent\advance\pgmlCount by 1 \llap{\the\pgmlCount. }\ignorespaces}%
+\def\pgmlalphaItem{\par\indent{\advance\pgmlCount by `\a \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlAlphaItem{\par\indent{\advance\pgmlCount by `\A \llap{\char\pgmlCount. }}\advance\pgmlCount by 1\ignorespaces}%
+\def\pgmlromanItem{\par\indent\advance\pgmlCount by 1 \llap{\romannumeral\pgmlCount. }\ignorespaces}%
+\def\pgmlRomanItem{\par\indent\advance\pgmlCount by 1 \llap{\uppercase\expandafter{\romannumeral\pgmlCount}. }\ignorespaces}%
+
+\def\pgmlCenter{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus .5\hsize
+  \advance\rightskip by 0pt plus .5\hsize
+  \def\pgmlBreak{\break}%
+}%
+\def\pgmlRight{%
+  \par \parfillskip=0pt
+  \advance\leftskip by 0pt plus \hsize
+  \def\pgmlBreak{\break}%
+}%
+
+\def\pgmlBreak{\\}%
+
+\def\pgmlHeading#1{%
+  \par\bfseries
+  \ifcase#1 \or\huge \or\LARGE \or\large \or\normalsize \or\footnotesize \or\scriptsize \fi
+}%
+
+\def\pgmlRule#1#2{%
+  \par\noindent
+  \hbox{%
+    \strut%
+    \dimen1=\ht\strutbox%
+    \advance\dimen1 by -#2%
+    \divide\dimen1 by 2%
+    \advance\dimen2 by -\dp\strutbox%
+    \raise\dimen1\hbox{\vrule width #1 height #2 depth 0pt}%
+  }%
+  \par
+}%
+
+\def\pgmlIC#1{\futurelet\pgmlNext\pgmlCheckIC}%
+\def\pgmlCheckIC{\ifx\pgmlNext\pgmlSpace \/\fi}%
+{\def\getSpace#1{\global\let\pgmlSpace= }\getSpace{} }%
+
+{\catcode`\ =12\global\let\pgmlSpaceChar= }%
+{\obeylines\gdef\pgmlPreformatted{\par\small\ttfamily\hsize=10\hsize\obeyspaces\obeylines\let^^M=\pgmlNL\pgmlNL}}%
+\def\pgmlNL{\par\bgroup\catcode`\ =12\pgmlTestSpace}%
+\def\pgmlTestSpace{\futurelet\next\pgmlTestChar}%
+\def\pgmlTestChar{\ifx\next\pgmlSpaceChar\ \pgmlTestNext\fi\egroup}%
+\def\pgmlTestNext\fi\egroup#1{\fi\pgmlTestSpace}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\pgmlSetup
+{\bfseries{}(Extra Credit)}
+\vskip\baselineskip
+Suppose you have an algorithm A for your problem that always returns the correct answer, but takes different amounts of time each time it runs.  Let $X_n$ be the random variable giving the time algorithm A takes to complete for input of size $n$.  Time can't be negative, so $X \geq 0$.\pgmlBreak
+We call A a {\itshape{}Las Vegas Algorithm} if for any input size $n$ there is a $T(n)$ so that $\mathbb{E}(X_n) = T(n)$.
+{\pgmlIndent\let\pgmlItem=\pgmlbulletItem
+
+
+\pgmlItem{}Side note: it isn't always the case that a random variable has finite expectation, even the values it can take on are finite.  The assumption that there is some $T(n)$ for any $n$ is a non-trivial assumption.
+\par}%
+\vskip\baselineskip
+Let's say we have algorithm that determines whether any integer is prime.  For an integer input that takes up $n$ bits, the algorithm takes $n$ seconds to run with probability $1/2$.  With probability $1/2$ the algorithm takes 1 second to run.  What is $T(n)$, in seconds?  \mbox{  \parbox[t]{20ex}{\hrulefill}  }.
+\vskip\baselineskip
+Let's say you have some Las Vegas algorithm A that runs in {\itshape{}expected time} $T(n)$ for problem size $n$.  What you would prefer, however, is an algorithm that {\itshape{}always} finishes in time $O(T(n))$, but may have up to a 5\% probability of returning the wrong answer.  We will construct an algorithm A' from A that satisfies these properties.
+\vskip\baselineskip
+Recall Markov's inequality: for some random variable $Y \geq 0$, $P(Y >= a) \leq \mathbb{E}(Y)/a$.\pgmlBreak
+Fixing some $n$, apply Markov's inequality to get an upper bound on $P(X_n >= cT(n))$: \mbox{  \parbox[t]{20ex}{\hrulefill}  }.\pgmlBreak
+What is $c$ such that $P(X_n >= cT(n)) <= 0.05$?  \mbox{  \parbox[t]{20ex}{\hrulefill}  }
+\vskip\baselineskip
+Thus an algorithm A' is as follows:
+{\pgmlIndent\let\pgmlItem=\pgmlbulletItem
+
+
+\pgmlItem{}Run A until time \mbox{  \parbox[t]{20ex}{\hrulefill}  }T(n).  If A has completed, return the correct value.
+
+
+\pgmlItem{}Else, return a random value.
+\par}%
+\vskip\baselineskip
+This type of algorithm we have, where the algorithm completes in deterministic time $Q(n)$ but is correct with some probability is called a {\itshape{}Monte Carlo Algorithm}.
+\vskip\baselineskip
+{\itshape{}Recap}:
+{\pgmlIndent\let\pgmlItem=\pgmlbulletItem
+
+
+\pgmlItem{}For ``Las Vegas'' algorithms, uncertainty is in the algorithm {\itshape{}runtime}.  The algorithm is always correct.
+
+
+\pgmlItem{}For ``Monte Carlo'' algorithms, uncertainty is in the algorithm {\itshape{}correctness}.  The algorithm completes in deterministic time $T(n)$.
+\par}%
+\par}%
+
+
+
+\columnwidth=\linewidth
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WeBWorK Online Homework Delivery System
+% Copyright © 2000-2007 The WeBWorK Project, http://openwebwork.sf.net/
+% $CVSHeader: webwork2/conf/snippets/hardcopyPostamble.tex,v 1.2 2003/12/09 01:12:29 sh002i Exp $
+% 
+% This program is free software; you can redistribute it and/or modify it under
+% the terms of either: (a) the GNU General Public License as published by the
+% Free Software Foundation; either version 2, or (at your option) any later
+% version, or (b) the "Artistic License" which comes with this package.
+% 
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See either the GNU General Public License or the
+% Artistic License for more details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vfill
+\end{document}
+
