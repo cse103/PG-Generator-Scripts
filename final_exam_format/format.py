@@ -30,12 +30,13 @@ def exec_command(cmd):
 		logging.info(result)
 
 if __name__ == '__main__':
+    #check input arguments
 	if len(sys.argv) != 3:
 		print '\nusage:\n%s\n'%usage
 		exit(-1)
 
 	filename = sys.argv[1]
-	# f = codecs.open(filename, encoding='unicode-escape')
+	#f = codecs.open(filename, encoding='unicode-escape')
 	f = open(filename, 'r')
 	tex = f.read()
 
@@ -52,7 +53,7 @@ if __name__ == '__main__':
 		image_files = re.findall(r'\\includegraphics.*?{(.*?)}', tex)
 		tex = re.sub(r'\\includegraphics(.*?){.*/(.*?)}', r'\\includegraphics\1{%s/\2}'%img_dir, tex)
 
-		username = 'yuncong'
+		username = 'zzhai'
 		server = 'webwork.cse.ucsd.edu'
 		username_server = "%s@%s" % (username, server)
 		if not os.path.exists(img_dir):
