@@ -56,24 +56,6 @@ for fig_idx in range(num_question):
 	# use_normal = 1
 	# use_exp = 0
 
-	# normal distribution components
-	if use_normal:
-		stds = [0.5,1,1.5]
-		normal_res = 0.5
-		mean = np.random.randint((low_lim+3)/normal_res, (high_lim-3)/normal_res)*normal_res
-		std = stds[np.random.randint(0, len(stds))]	
-		rv_normal = norm(loc=mean, scale=std)
-		normal_pdf = rv_normal.pdf(X)
-		normal_cdf = rv_normal.cdf(X)
-
-	# exponential distribution components	
-	if use_exp:
-		lam_res = 0.5
-		lam = np.random.randint(0.5/lam_res, 2/lam_res)*lam_res
-		rv_exp = expon(scale=1./lam)
-		exp_pdf = rv_exp.pdf(X)
-		exp_cdf = rv_exp.cdf(X)
-
 	# uniform distribution components
 	upper_bound = [2, 5]
 	lower_bound = [-5, -2]
@@ -124,10 +106,10 @@ for fig_idx in range(num_question):
 		# w_uniform = ws[1]
 		# w_points = ws[2:]
 		num_component = uniform_num + point_num + use_normal + use_exp
-		#s = list(sorted(randint(1,19,num_component-1)))
-		l = [i for i in range(2,19,2)]
-		shuffle(l)
-		s = list(sorted(l[:num_component-1]))
+		s = list(sorted(randint(1,19,num_component-1)))
+		#l = [i for i in range(2,19,2)]
+		#shuffle(l)
+		#s = list(sorted(l[:num_component-1]))
 		split = [0] + s + [20]
 		component_weights = np.diff(split)*0.05
 		if component_weights.min() >= 1./(num_component+2):
@@ -143,20 +125,6 @@ for fig_idx in range(num_question):
 	all_cdf = np.zeros(len(X))
 
 	component_list = ''
-
-	if use_normal:
-		if draw_components:
-			plt.plot(X, w_normal * normal_pdf, 'r')
-		component_list = "\n- The normal component has mean of %s, and std of [______]{%s}. Its component weight is [_____]{%s}"\
-					 % (mean, std, np.around(w_normal, decimals=2))
-		all_cdf += w_normal*normal_cdf
-
-	if use_exp:
-		if draw_components:
-			plt.plot(X, w_exp * exp_pdf, 'y')
-		component_list += "\n- The exponential component has [`\lambda`] of %s. Its component weight is [_____]{%s}"\
-					 % (lam, np.around(w_exp, decimals=2))
-		all_cdf += w_exp*exp_cdf
 
 	if uniform_num>0:
 		if draw_components:
